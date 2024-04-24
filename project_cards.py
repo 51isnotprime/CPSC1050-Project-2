@@ -43,6 +43,7 @@ class Card():
         return self.status_type
 
     #This class method allows for the easy and formated printing of cards whenever neccessary.
+    #It takes a base string and centers and adds on all important info.
     def card_info(self):
         card_str = ''
         card_str += ('Cost: ' + str(self.get_cost())).center(30) + '\n'
@@ -78,18 +79,21 @@ class Deck():
             deck_str += (str(i.get_title()) + '\n')
         return deck_str
 
+    #Allows all cards in the deck to be printed out using the card methods above.
     def print_deck(self):
         deck_str = ''
         for i in self.deck:
             deck_str += (str(i.get_title()) + '\n')
         return deck_str
 
+#A class containing all other decks in the code. It has a deck, hand, and discard pile for cards to be moved though.
 class Piles():
     def __init__(self, deck, hand=[], discard=[]):
         self.hand = hand
         self.deck = deck
         self.discard = discard
     
+    #This method draws 5 random cards from the deck to the hand, shuffling the discard pile back into the deck when the deck is empty
     def draw(self):
         for i in range(5):
             if len(self.deck.get_deck()) == 0:
@@ -99,6 +103,7 @@ class Piles():
             self.hand.append(self.deck.get_deck()[picker])
             self.deck.get_deck().pop(picker)
     
+    #This method is used at the start of every fight to ensure the discard piles and hand are empty and all cards in back in the deck.
     def reset(self):
         if len(self.hand) != 0:
             for i in range(len(self.hand)):
@@ -124,6 +129,7 @@ class Piles():
     def get_discard(self):
         return self.discard
 
+    #Print methods for the hand and discard pile similar to the one for the deck.
     def print_hand(self):
         hand_str = ''
         for card in self.get_hand():
