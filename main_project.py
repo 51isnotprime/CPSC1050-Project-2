@@ -2,7 +2,7 @@
 This code runs a game that is isnpired by card based rougelikes such as Slay the Spire, Wildfrost, Cobalt Core, Balatro, and others.
 Most of the inspiration comes from Slay the Spire as the player gains card and has one on one combats with enemies as they
 venture through a dungeon. The game is title Card Casters and sets the player against five different eneimes with three characters to
-pick from. I hope you enjoy the game.
+pick from. I hope you enjoy the game. Here is the link to the github repository https://github.com/51isnotprime/CPSC1050-Project-2
 
 - Donovan Whelan
 '''
